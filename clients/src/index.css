@@ -1,0 +1,524 @@
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.home{
+  width: 100vw;
+  height: 100vh;
+  /* background: rgb(24, 19, 62); */
+  overflow: hidden;
+}
+
+.homeLeft{
+  width: 50vw;
+  float: left;
+
+}
+
+.heading{
+  margin-top: 200px;
+  font-family: cursive;
+  color: rgb(0, 27, 127);
+  font-style: italic;
+  border: 1px solid rgb(255, 108, 55);
+  padding: 10px;
+  margin: 30px;
+  margin-top: 50px;
+  text-align: center;
+  border-radius: 10px;
+  font-size: 28px;
+  background-color: #fae0e4;
+  width: 70%;
+  margin-left: 10%;
+}
+
+.homeImg{
+  margin-top: 2%;
+  height: 90vh;
+  width: 40vw;
+  margin-right: 2%;
+  border-radius: 20px;
+  /* border: 1px solid grey; */
+  box-shadow: 5px 5px 10px grey;
+}
+
+.content{
+  margin: 10%;
+  background-color: #fefee3;
+  width: 80%;
+  height: 300px;
+  border-radius: 20px;
+  border: 1px solid pink;
+}
+
+.cont{
+  padding: 10px;
+  padding-top: 15%;
+  font-size: 20px;
+  font-style: italic;
+  font-family: cursive;
+  color: rgb(37, 46, 39);
+}
+
+.button{
+  background-color: rgb(7, 154, 88);
+  width: 250px;
+  border-radius: 10px;
+  text-align: center;
+  justify-content: space-around;
+  margin: 20px;
+}
+
+.loginLeft{
+  width: 50vw;
+  float: left;
+}
+
+.loginImg{
+  margin-top: 20vh;
+  /* height: 80vh; */
+  width: 40vw;
+  margin-right: 2%;
+  border-radius: 20px;
+  /* border: 1px solid grey; */
+  box-shadow: 5px 5px 10px grey;
+}
+
+.loginForm{
+  border: 1px solid grey;
+  border-radius: 20px;
+  margin: 40px;
+  margin-right: 40px;
+  background-color: #fefee3;
+  height: 60vh;
+  border: 1px solid pink;
+  font-size: 20px;
+}
+
+.formLogin{
+  padding: 20px;
+  margin: 30px;
+  margin-top: 8px;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  /* font-style: italic; */
+}
+
+.input{
+  padding: 10px;
+  width: 90%;
+  margin-bottom: 20px;
+  font-size: 14x;
+}
+
+.loginBtn{
+  width: 200px;
+  background-color: rgb(129, 240, 131);
+  border: 1px solid greenyellow;
+  border-radius: 10px;
+  height: 40px;
+  font-size: 16px;
+  font-family: cursive;
+  
+}
+
+.registerLeft{    
+  width: 50vw;
+  float: left;
+}
+
+.registerImg{
+  margin-top: 10vh;
+  height: 85vh;
+  /* width: 40vw; */
+  margin-right: 2%;
+  border-radius: 20px;
+  /* border: 1px solid grey; */
+  box-shadow: 5px 5px 10px grey;
+}
+
+.registerForm{
+  border: 1px solid grey;
+  border-radius: 20px;
+  margin: 30px;
+  margin-right: 40px;
+  background-color: #fefee3;
+  height: 60vh;
+  border: 1px solid pink;
+  font-size: 20px;
+  height: 75vh;
+}
+
+.formRegister{
+  padding: 10px;
+  padding-top: 10px;
+  margin: 30px;
+  margin-top: 10px;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  /* font-style: italic; */
+}
+
+.registerBtn{
+  height: 40px;
+  font-size: 15px;
+  background-color: rgb(50, 187, 233);
+  border: 1px solid lightblue;
+  border-radius: 10px;
+  padding: 10px;
+  width: 95%;
+}
+
+.input:focus{
+  outline: none;
+}
+
+.contactsBar{
+  float: left;
+  border: 1px solid lightblue;
+  width: 15vw;
+  height: 80vh;
+  position: relative;
+  margin: 10px;
+  border-radius: 10px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.contactsBar::-webkit-scrollbar {
+  width: 5px;
+  background-color: #f8fff9;
+}
+.contactsBar::-webkit-scrollbar-thumb {
+width: 5px;
+background-color: #1b4da4f1;
+border-radius: 1rem;
+}
+
+.chatContainer{
+  float:right;
+  border: 1px solid rgb(181, 254, 181);
+  width: 80vw;
+  height: 80vh;
+  margin: 8px;
+  /* overflow-y: scroll; */
+  /* overflow-x: hidden; */
+  position: relative;
+}
+
+.myselfDesc{
+  /* border: 1px solid black; */
+  position: absolute;
+  bottom: 0%;
+  width: 90%;
+  height: 30px;
+  /* margin: 20px; */
+  padding: 10px;
+  text-align: center;
+  background-color: rgb(188, 252, 230);
+  font-family: cursive;
+  font-size: 16px;
+}
+
+.contact{
+  background-color: #fefae0;
+  border: 1px solid rgb(191, 191, 255);
+  text-align: center;
+  font-family: cursive;
+  font-size: 15px;
+  font-weight: 100;
+  padding: 15px;
+}
+
+.contact.selected{
+  background-color: #d0f4de;
+}
+
+.chatBox{
+  padding: 10px;
+  height: 60vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.chatBox::-webkit-scrollbar {
+  width: 5px;
+  background-color: #f8fff9;
+}
+.chatBox::-webkit-scrollbar-thumb {
+  width: 5px;
+  background-color: #be2626f1;
+  border-radius: 1rem;
+}
+
+.openedContact{
+  background-color: #a6e1fa;
+  padding: 15px;
+  font-family: cursive;
+  font-size: 18px;
+  /* position: absolute; */
+  z-index: 10;
+  top: 0%;
+  width: 97%;
+}
+
+.message.sended{
+  background-color: #e2eafc;
+  padding: 20px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  float: right;
+  clear: both;
+  border-radius: 10px;
+  margin: 1px;
+  border: 1px solid rgb(162, 246, 162);
+}
+
+p{
+  margin: 8px;
+}
+
+.message.recieved{
+  background-color: #fefae0;
+  padding: 20px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  float: left;
+  clear: both;
+  border-radius: 10px;
+  margin: 1px;
+  border: 1px solid rgb(243, 195, 153);
+}
+
+.chatInput{
+  position: relative;
+  display: flex;
+  height: 50px;
+  width: 80vw;
+  /* border: 2px solid black; */
+}
+
+.emojiSymbol{
+  position: absolute;
+  font-size: 30px;
+  margin: 10px;
+  padding-left: 10px;
+  color: #3a0ca3;
+  cursor: pointer;
+}
+
+.msgForm{
+  position: absolute;
+  bottom: 0px;
+  left: 6%;
+  width: 95%;
+}
+.msgInput{
+  padding: 15px;
+  width: 80%;
+  /* padding-left: 50px; */
+  /* bottom: 0%; */
+  /* position: absolute; */
+
+}
+
+.showChat{
+  display: none;
+}
+
+.msgInput:focus{
+  outline: none;
+}
+
+.send{
+  padding: 10px;
+  background-color: #b9fbc0;
+  width: 9vw;
+  font-size: 20px;
+  border: 1px solid lightgreen;
+  margin-left: 10px;
+  border-radius: 10px;
+  /* position: absolute; */
+
+} 
+
+.emoji-picker-react {
+  top: -350px;
+  position: absolute;
+  background-color: #080420;
+  box-shadow: 0 5px 10px #9a86f3;
+  border-color: #9a86f3;
+}
+
+.logout{
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  right: 8%;
+  top: 2%;
+  border: 1px solid black;
+  border-radius: 50%;
+}
+
+.search{
+  padding: 5%;
+  font-size: 15px;
+  border: none;
+}
+
+.search:focus{
+  outline: none;
+}
+
+@media only screen and (max-width: 750px) {
+  .homeImg {
+      height: 10vh;
+      width: 10vw;
+      display: none;
+  }
+
+  .homeLeft{
+      width: 100vw;
+      float: left;
+  }
+  .button{
+      background-color: rgb(7, 154, 88);
+      width: 200px;
+      border-radius: 10px;
+      text-align: center;
+      justify-content: space-around;
+      margin: 20px;
+  }  
+  .content{
+      height: 60vh;
+  }
+  .loginLeft{
+      width: 100vw;
+      float: left;
+  }       
+  .heading{
+      margin: 12px;
+      margin-left: 10vw;
+      font-size: 24px;
+      width: 65vw;
+  }
+  .loginImg{
+      display: none;
+  }
+  .loginForm{
+      font-size: 18px;
+      height: auto;
+      margin: 10px;
+  }
+  .formLogin{
+      padding: 10px;
+      margin: 10px;
+      font-size: 18px;
+  }
+  .registerLeft{    
+      width: 100vw;
+      float: left;
+  }
+  .registerImg{
+      display: none;
+  }
+  .registerForm{
+      margin: 10px;
+      height: auto;
+      font-size: 18px;
+  }
+  .formRegister{
+      padding: 10px;
+      margin: 10px; 
+      font-size: 18px;
+  }
+  .input{
+      margin-bottom: 15px;
+  }
+  
+  .chatContainer{
+      width: 90vw;
+      margin: 10px;
+      margin-left: 10px;
+  }
+  .openedContact{
+      width: 95%;
+      font-size: 16px;
+  }
+  p{
+      margin: 5px;
+  }
+  .showChat{
+      display: block;
+      background-color: #b9fbc0;
+      border: none;
+      padding: 10px;
+      width: 80vw;
+      margin-left: 10vw;
+  }
+  .contactsBar{
+      width: 80vw;
+      margin-left: 10vw;
+  }
+  .msgForm{
+      bottom: 0px;
+      /* left: 6%; */
+      width: 100%;
+  }
+  .msgInput{
+      width: 60%;
+      margin-left: 20px;
+  }
+  .emojiSymbol{
+      margin: 5px;
+      padding-left: 5px;
+      font-size: 25px;
+  }
+  .send{
+      width: 15%;
+      border-radius: 10%;
+      float: right;
+      margin: 0px;
+  }
+  .message.sended{    
+      font-size: 12px;
+  }
+  .message.recieved{
+      font-size: 12px;
+  }
+  .logout{
+      border: 1px solid black;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      right: 1%;
+  }
+  .welcome{
+      width: 90vw;
+  }
+}
+
+@media only screen and (min-width: 750px) and (max-width: 1130px) {
+  .registerImg{
+      margin-top: 150px;
+      margin-left: 50px;
+      height: 70vh;
+      width: 40vw;
+  }
+  .contactsBar{
+      width: 180px;
+      margin-left: 10px;
+  }
+  .chatContainer{
+      width: 70vw;
+      float: left;
+  }
+  .msgInput{
+      width: 50vw;
+      margin-left: 5px;
+  }
+  .emojiSymbol{
+      margin: 5px;
+      padding-left: 4px;
+  }
+}
