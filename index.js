@@ -13,7 +13,7 @@ app.use(express.json());
 if(process.env.NODE_ENV!=="production")
   require("dotenv").config({path:"./.env"});
 
-const PORT = process.env.PORT;
+// const PORT = process.env.PORT;
 mongoose.connect(process.env.MONGO_URL, {
   useNewUrlParser: true,
   useUnifiedTopology: true
@@ -32,6 +32,9 @@ const io = require("socket.io")(server, {
   }
 });
 
+app.get("/", (req, res) => {
+  res.json("server started here");
+})
 
 app.get("/api/v1/isValid/:username/:email", async (req, res) => {
 
@@ -191,6 +194,6 @@ io.on("connection", (socket) => {
   });
 });
 
-server.listen(PORT, () => {
-  console.log(`Server started on ${PORT}`);
+server.listen(process.env.PORT, () => {
+  console.log(`Server started`);
 })
