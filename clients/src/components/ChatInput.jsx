@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { BsEmojiSmileFill } from "react-icons/bs";
 import { IoMdSend } from "react-icons/io";
 import Picker from "emoji-picker-react";
-const api_base = "https://chat-me-chatterbox.herokuapp.com"
+const api_base = "https://chat-me-chatterbox.vercel.app"
 
 function ChatInput(props) {
 

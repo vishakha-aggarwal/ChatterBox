@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import Contacts from '../components/Contacts'
 import ChatContainer from "../components/ChatContainer";
 import { io } from 'socket.io-client'
-const api_base = "https://chat-me-chatterbox.herokuapp.com";
+const api_base = "https://chat-me-chatterbox.vercel.app";
 
 function Chat() {
 

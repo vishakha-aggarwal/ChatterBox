@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react'
 import ChatInput from './ChatInput';
 import { v4 as uuidv4 } from "uuid";
-const api_base = "https://chat-me-chatterbox.herokuapp.com"
+const api_base = "https://chat-me-chatterbox.vercel.app"
 
 
 function ChatContainer(props) {
