@@ -4,8 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import Contacts from '../components/Contacts'
 import ChatContainer from "../components/ChatContainer";
 import { io } from 'socket.io-client'
-const api_base = "https://chat-me-chatterbox.vercel.app";
-// const api_base = "http://localhost:3001"
+const api_base = "https://chat-me-chatterbox.onrender.com"
 
 function Chat() {
 

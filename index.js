@@ -26,7 +26,6 @@ const server = http.createServer(app);
 const io = require("socket.io")(server, {
   cors: {
     origin: "https://chat-me-chatterbox.netlify.app",
-    // origin: "http://localhost:3001",
     methods: ["GET", "POST"],
     credentials: true
   }

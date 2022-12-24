@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import { BsEmojiSmileFill } from "react-icons/bs";
 import { IoMdSend } from "react-icons/io";
 import Picker from "emoji-picker-react";
-const api_base = "https://chat-me-chatterbox.vercel.app"
-// const api_base = "http://localhost:3001"
+const api_base = "https://chat-me-chatterbox.onrender.com"
 
 function ChatInput(props) {
 

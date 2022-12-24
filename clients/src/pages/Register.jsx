@@ -2,9 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useNavigate, Link, Navigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-const api_base = "https://chat-me-chatterbox.vercel.app";
-// const api_base = "http://localhost:3001"
-
+const api_base = "https://chat-me-chatterbox.onrender.com"
 
 function Register() {
 
