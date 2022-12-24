@@ -11,7 +11,6 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.use(express.static(path.join(__dirname, "./clients/build")));
 
 mongoose.connect("mongodb+srv://vishakha_251:vishakha@messenger.himip.mongodb.net/?retryWrites=true&w=majority", {
   useNewUrlParser: true,
@@ -32,10 +31,6 @@ const io = require("socket.io")(server, {
   }
 });
 
-
-app.get("/", (req, res) => {
-  res.json("server started");
-})
 
 app.get("/api/v1/isValid/:username/:email", async (req, res) => {
 
@@ -59,10 +54,10 @@ app.get("/api/v1/isValid/:username/:email", async (req, res) => {
 })
 
 app.post("/api/v1/addUser", (req, res) => {
-
+  
   try {
     const { username, email, password } = req.body;
-
+    
     const data = new User({
       username: username,
       email: email,
@@ -193,6 +188,12 @@ io.on("connection", (socket) => {
     // console.log(data);
     socket.to(data.to).emit("msg-recieve", data.message);
   });
+});
+
+app.use(express.static(path.join(__dirname, "./clients/build")));
+
+app.get("*", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "./clients/build/index.html"));
 });
 
 server.listen(PORT, () => {
