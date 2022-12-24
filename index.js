@@ -24,7 +24,7 @@ const Messages = require("./models/messageModel");
 const server = http.createServer(app);
 const io = require("socket.io")(server, {
   cors: {
-    origin: "https://chat-me-chatterbox.vercel.app",
+    origin: "https://chat-me-chatterbox.netlify.app",
     // origin: "http://localhost:3001",
     methods: ["GET", "POST"],
     credentials: true
@@ -188,12 +188,6 @@ io.on("connection", (socket) => {
     // console.log(data);
     socket.to(data.to).emit("msg-recieve", data.message);
   });
-});
-
-app.use(express.static(path.join(__dirname, "./clients/build")));
-
-app.get("*", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "./clients/build/index.html"));
 });
 
 server.listen(PORT, () => {
