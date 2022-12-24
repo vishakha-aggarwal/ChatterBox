@@ -3,6 +3,7 @@ import { useNavigate, Link, Navigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 const api_base = "https://chat-me-chatterbox.vercel.app";
+// const api_base = "http://localhost:3001"
 
 
 function Login() {
@@ -50,14 +51,14 @@ function Login() {
     {
       let resp;
       const { username, password } = values;
-      let url = api_base + "/login/" + username + "/" + password;
+      let url = api_base + "/api/v1/login/" + username + "/" + password;
       
       await fetch(url)
       .then((res) => res.json())
       .then(data => resp = data)
       .catch((err) => console.error("Not connected"));
             
-      // console.log(resp._id);
+      console.log(resp._id);
       if (resp.status !== true) {
         // console.log("jelklerjfer");
         toast.error(resp.msg, toastOptions);

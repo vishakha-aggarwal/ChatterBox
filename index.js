@@ -10,7 +10,8 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
-// app.use(express.static(path.join(__dirname + "/client/build")));
+
+app.use(express.static(path.join(__dirname, "./clients/build")));
 
 mongoose.connect("mongodb+srv://vishakha_251:vishakha@messenger.himip.mongodb.net/?retryWrites=true&w=majority", {
   useNewUrlParser: true,
@@ -24,7 +25,8 @@ const Messages = require("./models/messageModel");
 const server = http.createServer(app);
 const io = require("socket.io")(server, {
   cors: {
-    origin: "https://chat-me-chatterbox.netlify.app",
+    origin: "https://chat-me-chatterbox.vercel.app",
+    // origin: "http://localhost:3001",
     methods: ["GET", "POST"],
     credentials: true
   }
@@ -35,7 +37,7 @@ app.get("/", (req, res) => {
   res.json("server started");
 })
 
-app.get("/isValid/:username/:email", async (req, res) => {
+app.get("/api/v1/isValid/:username/:email", async (req, res) => {
 
   try {
     const { username, email } = req.params;
@@ -56,7 +58,7 @@ app.get("/isValid/:username/:email", async (req, res) => {
   }
 })
 
-app.post("/addUser", (req, res) => {
+app.post("/api/v1/addUser", (req, res) => {
 
   try {
     const { username, email, password } = req.body;
@@ -74,8 +76,7 @@ app.post("/addUser", (req, res) => {
   }
 })
 
-app.get("/login/:username/:password", async(req, res) =>{
-
+app.get("/api/v1/login/:username/:password", async(req, res) =>{
 
   try {
     const { username, password } = req.params;
@@ -94,7 +95,7 @@ app.get("/login/:username/:password", async(req, res) =>{
 
 })
 
-app.get("/getuserdetail/:id", async (req, res) =>{
+app.get("/api/v1/getuserdetail/:id", async (req, res) =>{
 
   try {
     const id = req.params.id;
@@ -106,7 +107,7 @@ app.get("/getuserdetail/:id", async (req, res) =>{
   }
 })
 
-app.get("/getcontacts/:id", async (req, res) =>{
+app.get("/api/v1/getcontacts/:id", async (req, res) =>{
 
   try {
     const id = req.params.id;
@@ -118,7 +119,7 @@ app.get("/getcontacts/:id", async (req, res) =>{
   }
 })
 
-app.get("/getcontacts/:id/:searchUser", async (req, res) =>{
+app.get("/api/v1/getcontacts/:id/:searchUser", async (req, res) =>{
 
   try {
     const id = req.params.id;
@@ -132,7 +133,7 @@ app.get("/getcontacts/:id/:searchUser", async (req, res) =>{
   }
 })
 
-app.post("/addMessage", (req, res) => {
+app.post("/api/v1/addMessage", (req, res) => {
 
   try {
     const { from, to, message, date } = req.body;
@@ -151,7 +152,7 @@ app.post("/addMessage", (req, res) => {
 
 })
 
-app.get("/getmessages/:from/:to" , async(req, res) => {
+app.get("/api/v1/getmessages/:from/:to" , async(req, res) => {
 
   try {
     const { from, to } = req.params;
@@ -189,7 +190,7 @@ io.on("connection", (socket) => {
   });
 
   socket.on("send-msg", (data) => {
-    console.log(data);
+    // console.log(data);
     socket.to(data.to).emit("msg-recieve", data.message);
   });
 });

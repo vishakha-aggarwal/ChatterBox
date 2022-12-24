@@ -3,6 +3,7 @@ import { BsEmojiSmileFill } from "react-icons/bs";
 import { IoMdSend } from "react-icons/io";
 import Picker from "emoji-picker-react";
 const api_base = "https://chat-me-chatterbox.vercel.app"
+// const api_base = "http://localhost:3001"
 
 function ChatInput(props) {
 
@@ -61,7 +62,7 @@ function ChatInput(props) {
                 date: getDate()
             }
 
-            fetch(api_base + '/addMessage', {
+            fetch(api_base + '/api/v1/addMessage', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(data)

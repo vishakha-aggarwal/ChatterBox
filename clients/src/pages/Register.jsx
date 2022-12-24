@@ -3,6 +3,7 @@ import { useNavigate, Link, Navigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 const api_base = "https://chat-me-chatterbox.vercel.app";
+// const api_base = "http://localhost:3001"
 
 
 function Register() {
@@ -60,7 +61,7 @@ function Register() {
         {
             let resp;
             const { email, username, password } = values;
-            let url = api_base + "/isValid/" + username + "/" + email;
+            let url = api_base + "/api/v1/isValid/" + username + "/" + email;
             // console.log(url);
             await fetch(url)
             .then((res) => res.json())
@@ -81,7 +82,7 @@ function Register() {
                 password: password
             }
 
-            fetch(api_base + '/addUser', {
+            fetch(api_base + '/api/v1/addUser', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(data)

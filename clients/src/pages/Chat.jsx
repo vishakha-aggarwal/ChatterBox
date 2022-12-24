@@ -5,6 +5,7 @@ import Contacts from '../components/Contacts'
 import ChatContainer from "../components/ChatContainer";
 import { io } from 'socket.io-client'
 const api_base = "https://chat-me-chatterbox.vercel.app";
+// const api_base = "http://localhost:3001"
 
 function Chat() {
 
@@ -37,7 +38,7 @@ function Chat() {
     let currentURL = window.location.pathname;
     let id = currentURL.substring(6);
     
-    fetch(api_base + "/getuserdetail/" + id)
+    fetch(api_base + "/api/v1/getuserdetail/" + id)
     .then(res => res.json())
     .then((data) => {
       setCurrentUser(data)
@@ -54,7 +55,7 @@ function Chat() {
     let currentURL = window.location.pathname;
     let id = currentURL.substring(6);
     // console.log(api_base + "/getcontacts/" + id + "/" + searchUser);
-    fetch(api_base + "/getcontacts/" + id + "/" + searchUser)
+    fetch(api_base + "/api/v1/getcontacts/" + id + "/" + searchUser)
     .then(res => res.json())
     .then((data) => { 
         setContacts([]);

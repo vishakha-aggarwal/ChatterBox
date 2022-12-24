@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react'
 import ChatInput from './ChatInput';
 import { v4 as uuidv4 } from "uuid";
 const api_base = "https://chat-me-chatterbox.vercel.app"
-
+// const api_base = "http://localhost:3001"
 
 function ChatContainer(props) {
 
@@ -44,7 +44,7 @@ function ChatContainer(props) {
 
         const from = myself._id;
         const to = currentChat._id;
-        fetch(api_base + "/getmessages/" + from + "/" + to)
+        fetch(api_base + "/api/v1/getmessages/" + from + "/" + to)
         .then(res => res.json())
         .then((data) => { 
             setMessages([]);
