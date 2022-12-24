@@ -5,21 +5,22 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const { Server } = require("socket.io");
 const path = require("path");
-const PORT = process.env.PORT || 3001;
 const app = express();
 
 app.use(cors());
 app.use(express.json());
 
+if(process.env.NODE_ENV!=="production")
+  require("dotenv").config({path:"./.env"});
 
-mongoose.connect("mongodb+srv://vishakha_251:vishakha@messenger.himip.mongodb.net/?retryWrites=true&w=majority", {
+const PORT = process.env.PORT;
+mongoose.connect(process.env.MONGO_URL, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 }).then(() => console.log("Connected to MongoDB")).catch(console.error);
 
 const User = require("./models/usermodel");
 const Messages = require("./models/messageModel");
-
 
 const server = http.createServer(app);
 const io = require("socket.io")(server, {
